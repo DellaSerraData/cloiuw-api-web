@@ -1,7 +1,14 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from .forms import ChatForm
 
 import requests
+
+
+def chat_view(request):
+    # Função para renderizar o front end.
+    form = ChatForm()
+    return render(request, 'pedro_chatbot/chat.html', {'form': form})
 
 def chatbot_response(request):
     # Pega a mensagem do usuário do request

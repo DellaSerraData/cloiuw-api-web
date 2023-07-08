@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+<head>
+    <title>Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'pedro_chatbot/chat.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'pedro_chatbot/style.css' %}">
+
+</head>
+<body>
+    <div id="chatBox"></div>
+    <form id="chatForm">
+        {{ form.as_p }}
+        <input type="submit" value="Enviar mensagem">
+    </form>
+</body>
+</html>
