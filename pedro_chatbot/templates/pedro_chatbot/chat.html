@@ -1,17 +1,24 @@
 {% load static %}
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Chatbot</title>
+    <title>ChatGPT</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'pedro_chatbot/chat.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'pedro_chatbot/style.css' %}">
-
 </head>
 <body>
-    <div id="chatBox"></div>
-    <form id="chatForm">
-        {{ form.as_p }}
-        <input type="submit" value="Enviar mensagem">
+    <div class="chat-container">
+        <div class="chat-message bot-message">
+            <p>Olá, como posso ajudá-lo hoje?</p>
+        </div>
+        <div class="chat-message user-message">
+            <p>Estou procurando por recomendações de livros.</p>
+        </div>
+    </div>
+    <form class="message-form">
+        <input type="text" placeholder="Digite sua mensagem aqui...">
+        <button type="submit">Enviar</button>
     </form>
 </body>
 </html>
