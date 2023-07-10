@@ -1,18 +1,29 @@
 $(document).ready(function(){
-    $('#chatForm').on('submit', function(event){
+    $('#message-form').on('submit', function(event){
         event.preventDefault();
+
+        let userMessage = $('#message-input').val();
+
+        if(userMessage){
+            $('#user-message').append('<p>' + userMessage + '</p>');
+            $('#message-input').val('');  // Limpa o campo de entrada
+        }
 
         $.ajax({
             url: "/chat/chatbot_response/",
             data: {
-                'message': $('#id_message').val()
+                'message': userMessage
             },
             dataType: 'json',
             success: function(data){
+                $('#bot-message').empty();
+
                 data.forEach(function(msg){
-                    $('#chatBox').append('<p><b>Bot:</b> ' + msg.text + '</p>');
+                    $('#bot-message').append('<p>' + msg.text + '</p>');
                 });
-                $('#id_message').val('');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log("AJAX Error: " + textStatus + ": " + errorThrown);
             }
         });
     });

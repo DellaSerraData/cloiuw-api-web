@@ -4,21 +4,24 @@
 <head>
     <title>ChatGPT</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static 'pedro_chatbot/chat.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'pedro_chatbot/style.css' %}">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-message bot-message">
-            <p>Olá, como posso ajudá-lo hoje?</p>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-message bot-message" id="bot-message">
+            <!-- As mensagens do bot serão adicionadas aqui -->
         </div>
-        <div class="chat-message user-message">
-            <p>Estou procurando por recomendações de livros.</p>
+        <div class="chat-message user-message" id="user-message">
+            <!-- As mensagens do usuário serão adicionadas aqui -->
         </div>
     </div>
-    <form class="message-form">
-        <input type="text" placeholder="Digite sua mensagem aqui...">
-        <button type="submit">Enviar</button>
+    <form class="message-form" id="message-form">
+        <input type="text" id="message-input" placeholder="Digite sua mensagem aqui...">
+        <button type="submit" id="message-submit">Enviar</button>
     </form>
+
+    <script src="{% static 'pedro_chatbot/chat.js' %}"></script>
 </body>
 </html>
+
+
