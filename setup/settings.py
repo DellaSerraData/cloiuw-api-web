@@ -13,7 +13,7 @@ SECRET_KEY = "django-insecure-2d&w_uivev(qm+ppd--a-9x@-cc(&euh@cpb4okhlbf-h8xm@$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cloiuw-api-web-production.up.railway.app']
 
 
 # Application definition
